@@ -1,0 +1,10 @@
+{
+	"objectName" : "wallet",
+ 	"filterBy" : [{"name" : "ethkraken"}],              
+ 	"fieldsToShow" : ["name","pool_balances"],
+ 	"entitiesToShow" : [{
+                    "objectName" : "pool_balances",
+                    "filterBy" : [{"pool" : "hiveon"}],
+                    "fieldsToShow" : ["name", ""]
+                }]
+}

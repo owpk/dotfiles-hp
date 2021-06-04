@@ -1,0 +1,15 @@
+/.config/*
+!/.config/polybar
+!/.cofngi/i3
+!/.config/deadd
+!/.config/scripts
+!/.config/ranger
+!/.config/rofi
+!/.config/nvim
+!/.config/picom
+!/.config/mpv
+!/.config/dunst
+!/.config/alacritty
+!/.config/CONFIGS
+!/.config/gtk*
+!/.config/colors.ini
