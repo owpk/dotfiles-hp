@@ -13,7 +13,11 @@ __git_files () {
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export ZSH="/home/owpk/.oh-my-zsh"
-ZSH_DISABLE_COMPFIX=true
+
+# PLUGS
+plugins=(
+   zsh-autosuggestions
+)
 
 # THEME
 #ZSH_THEME="agnoster"
@@ -23,36 +27,38 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # AUTOSUGGEST
 ZSH_AUTOSUGGEST_STRATEGY=(completion)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5e5e5e"
+#ZSH_AUTOSUGGEST_USE_ASYNC
+#unset ZSH_AUTOSUGGEST_USE_ASYNC
 
 # OTHER SETTINGS
 CASE_SENSITIVE="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
+ZSH_DISABLE_COMPFIX=true
 
 # BINDINGS
 bindkey '^ ' autosuggest-accept
 
-# PLUGS
-plugins=(
-   zsh-autosuggestions
-)
-
 # ALIASES
 alias spring="cd ~/PAPKA/GUIDES/Spring/SpringGB"
 alias cfg="cd ~/.config"
-alias aur="cd ~/hm/AUR"
+#alias aur="cd ~/hm/AUR"
 alias psqld="sudo systemctl start postgresql"
 alias gmvn="mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes
 -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4"
 alias pclip="xclip"
 alias gclip="xclip -o"
 alias awmenu="curl -s https://raw.githubusercontent.com/wstam88/rofi-fontawesome/master/icon-list.txt | rofi -dmenu -i -markup-rows -p "" -columns 6 -width 100 -location 1 -lines 20 -bw 2 -yoffset -2 | cut -d\' -f2"
-alias dckd="sudo systemctl start docker"
+alias dckd="sudo systemctl $1 docker"
+alias hs="history | grep $1"
 #alias idea-ce="DRI_PRIME=1 idea"
+
+#export GIT_TRACE=1
 
 # ENV
 source $ZSH/oh-my-zsh.sh
-#source /usr/share/autojump/autojump.zsh
-#export GIT_TRACE=1
+source /usr/share/autojump/autojump.zsh
+export _JAVA_AWT_WM_NONREPARENTING=1
+wmname LG3D
 
 # must be here
 alias lls="ls -la --group-directories-first -h -S"
